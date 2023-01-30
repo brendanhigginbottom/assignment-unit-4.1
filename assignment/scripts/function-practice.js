@@ -193,9 +193,24 @@ console.log('Testing to see what booleans added together equals:', sumAll(testBo
 //     return an empty array. Note: The input array should not change.
 
 /**
- * @param {array} array 
+ * @param {array} array Array to extract positive numbers from
+ * @returns New array with only positive numbers in the array
  */
 
+function positiveArray(array) {
+  let newArray = [];
+  for (let positive of array) {
+    // testing typeof to not push strings converted to numbers
+    if (typeof positive === 'number' && positive > 0) {
+      newArray.push(positive)
+    }
+  }
+  return newArray;
+}
+
+let mixedArray = [3, 0, -3, 9, 'test', '4'];
+
+console.log('Should return array with 3,9:', positiveArray(mixedArray));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
