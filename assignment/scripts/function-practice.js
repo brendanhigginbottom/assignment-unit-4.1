@@ -216,3 +216,33 @@ console.log('Should return array with 3,9:', positiveArray(mixedArray));
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+//     Create a function that takes a number as an argument. 
+//     Add up all the numbers from 1 to the number you passed to the function. 
+//     For example, if the input is 4 then your function should return 10 because 
+//     1 + 2 + 3 + 4 = 10. Expect any positive number between 1 and 1000.
+//     (https://edabit.com/challenge/4gzDuDkompAqujpRi)
+
+/**
+ * 
+ * @param {number} number Number to add up all the numbers preceding and including it
+ * @returns {number} The sum or a string asking to pass a nubmer as an argument
+ */
+
+function addUp(number) {
+    let sum = 0;
+    let i = number;
+    if (typeof number === 'number' && number >= 0) {
+    while (i > 0) {
+      sum += i;
+      i -= 1;
+    }
+    return (sum);
+   } else {
+      return 'Please provide a number > 0';
+  }
+}
+
+console.log('Should be 15:', addUp(5));
+console.log('Should ask for number:', addUp(-3));
+console.log('I want to know what the answer is for 1000:', addUp(1000));
