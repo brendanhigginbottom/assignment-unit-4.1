@@ -76,19 +76,70 @@ console.log( 'isPositive - should say true', isPositive(3) );
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
 
+/**
+ * 
+ * @param {array} array Array which to check the last item of
+ * @return Returns the last array item or undefined if the array is empty
+ */
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast( array ) {
-
+  if (array[array.length - 1] === '') {
+    return undefined
+  } else {
+    return array[array.length - 1]
+  }
 }
+
+let testArray = ['one', 'two', 'three'];
+let testArrayTwo = ['one'];
+let testEmptyArray = []; 
+
+console.log('Should be three:', getLast(testArray));
+console.log('Should be one:', getLast(testArrayTwo));
+console.log('Should be undefined:', getLast(testEmptyArray));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+
+/**
+ * 
+ * @param {string, number, boolean} value Value to find in the array
+ * @param {array} array Array to search for the value
+ * @returns True if the value is found in the array, false if not found
+ */
+
 function find( value, array ){
-  
+  for (let search of array) {
+    if (value === search) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
+
+let testNumberArray = [3, 14, 34];
+let testBooleanArray = [false, true];
+
+
+console.log('Should be true:', find('one', testArray));
+console.log('Should be true:', find(3, testNumberArray));
+console.log('Should be true:', find(true, testBooleanArray));
+console.log('Should be false:', find('four', testArray));
+console.log('Should be false:', find(9, testNumberArray));
+console.log('Should be false:', find('test', testBooleanArray));
+console.log('Should be false:', find(3, testBooleanArray));
+
+/*
+I was curious whether find() would work if provided an array for value and noticed 
+the first console log came back false but I don't think I understand why. 
+let testArrayArray = [1, 2, [3,3]];
+console.log('Should be true:', find([3,3], testArrayArray));
+console.log('Should be true:', find(7, testArrayArray));
+*/
 
 // ----------------------
 // Stretch Goals
