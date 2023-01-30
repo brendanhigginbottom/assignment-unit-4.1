@@ -14,32 +14,62 @@ console.log('Test - should say "Hello World!"', hello());
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
+/**
+ * Adds (name) into the string, 'Welcome aboard, (name)'
+ * 
+ * @param {string} name Takes name to add to string returned
+ */
 function helloName( name ) {
-  return;
+  return `Welcome aboard, ${name}`;
 }
 // Remember to call the function to test
+console.log('Should welcome aboard Brendan:', helloName('Brendan'));
 
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
-  // return firstNumber + secondNumber;
+/**
+ * 
+ * @param {number} firstNumber One of two values to be summed
+ * @param {number} secondNumber second of two values
+ * @returns The sum of firstNumber and secondNumber
+ */
+
+function addNumbers( firstNumber, secondNumber ) {
+   return firstNumber + secondNumber;
 }
+console.log('Total should be 666:',addNumbers(665,1));
 
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+/**
+ * 
+ * @param {number} firstNumber 
+ * @param {number} secondNumber
+ * @param {number} thirdNumber
+ * @returns The total of three numbers multiplied together
+ */
+function multiplyThree(firstNumber, secondNumber, thirdNumber){
+  return firstNumber*secondNumber*thirdNumber;
 }
 
+console.log('Should be 27:', multiplyThree(3,3,3));
+
+/**
+ * 
+ * @param {number} number Number provided to determine whether it's even or odd
+ * @returns True if number greater than 0 and false if it is otherwise
+ */
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
+  } else {
+    return false;
   }
-    return;
 }
+
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
