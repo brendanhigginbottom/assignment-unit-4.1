@@ -164,15 +164,37 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+
+/**
+ * 
+ * @param {array} array Array to add the values of
+ * @returns Sum of all array values
+ */
+
+function sumAll(array) {
   let sum = 0
   // TODO: loop to add items
+  for (let value of array) {
+    sum += value;
+  }
   return sum;
 }
+
+console.log('Should be 51:', sumAll(testNumberArray));
+console.log('Should be 0onetwothree:', sumAll(testArray));
+
+/*
+Neat finding out for type conversion true is converted to 1 and false to 0.
+console.log('Testing to see what booleans added together equals:', sumAll(testBooleanArray));
+*/
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+
+/**
+ * @param {array} array 
+ */
 
 
 
