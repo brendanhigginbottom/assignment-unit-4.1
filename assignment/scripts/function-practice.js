@@ -146,8 +146,19 @@ console.log('Should be true:', find(7, testArrayArray));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
 
+/**
+ * 
+ * @param {string} letter Letter to check against first letter of a string
+ * @param {string} string String to check the first letter of
+ * @returns True if letter matches first letter of string, otherwise returns false
+ */
+function isFirstLetter(letter, string) {
+  if (letter === string.charAt(0)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
