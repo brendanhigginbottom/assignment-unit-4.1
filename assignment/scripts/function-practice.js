@@ -115,10 +115,10 @@ function find( value, array ){
   for (let search of array) {
     if (value === search) {
       return true;
-    } else {
-      return false;
-    }
+    } 
+      //return false; fixed after review in class on 01/31/23
   }
+  return false;
 }
 
 let testNumberArray = [3, 14, 34];
